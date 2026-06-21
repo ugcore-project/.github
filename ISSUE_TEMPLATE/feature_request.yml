@@ -1,0 +1,68 @@
+name: Feature Request
+description: Suggest a new feature or improvement for UgCore
+title: "feat: "
+labels: ["enhancement", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, check whether this feature already exists or has been requested in [open issues](../../issues).
+        Keep in mind that UgCore aims to stay lightweight — features better suited as a standalone resource may be declined.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the use case or pain point. What are you trying to do that you can't today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you'd like this to work. Be as specific as possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you tried working around this? Are there other approaches we should consider?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Where does this belong?
+      description: Help us understand the scope of the change.
+      options:
+        - Core framework (ug-core itself)
+        - Developer API / exports
+        - Configuration / convars
+        - Documentation
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Anything else — mockups, links, examples from other frameworks, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this has not been requested before
+          required: true
+        - label: This feature fits within UgCore's scope (core framework, not a standalone resource)
+          required: false
