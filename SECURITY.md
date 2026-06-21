@@ -28,7 +28,7 @@ Disclosing a vulnerability publicly before a fix is available puts every server 
 Use GitHub's built-in [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) on the affected repository. This keeps the report confidential and lets us collaborate on a fix before any public disclosure.
 
 **Alternative — Discord:**
-Reach out privately to a **Core Team** member on our [Discord server](https://discord.gg/YOUR_INVITE). Do not post in public channels.
+Reach out privately to a **Core Team** member on our [Discord server](https://discord.gg/pCJUcyVw5X). Do not post in public channels.
 
 ### What to Include
 
