@@ -201,4 +201,4 @@ If your change introduces a **breaking change**, call it out explicitly in your 
 
 ## Questions?
 
-If you are unsure about anything before opening a PR, ask in the **#dev** channel on our [Discord server](https://discord.gg/YOUR_INVITE). We would rather answer a question upfront than have you spend time on something that will not be accepted.
+If you are unsure about anything before opening a PR, ask in the **#dev** channel on our [Discord server](https://discord.gg/pCJUcyVw5X). We would rather answer a question upfront than have you spend time on something that will not be accepted.
