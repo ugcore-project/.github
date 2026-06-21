@@ -1,0 +1,20 @@
+name: Reusable — Auto Label
+
+on:
+  workflow_call:
+
+jobs:
+  label:
+    name: Label PR by Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply labels based on branch name
+        uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          # Reads .github/labeler.yml from the calling repo.
+          # If that file doesn't exist, falls back to the config below.
+          configuration-path: .github/labeler.yml
