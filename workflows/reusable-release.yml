@@ -1,0 +1,44 @@
+name: Reusable — Release & Notify
+
+on:
+  workflow_call:
+    secrets:
+      RELEASES_DISCORD_WEBHOOK_URL:
+        required: true
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create Release
+        id: release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+          URL: ${{ steps.release.outputs.url }}
+        run: |
+          REPO_NAME="${REPO##*/}"
+          curl -s -o /dev/null -w "%{http_code}" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"embeds\": [{
+                \"title\": \"🚀 ${REPO_NAME} ${TAG} released\",
+                \"description\": \"A new version of **${REPO_NAME}** is now available.\",
+                \"url\": \"${URL}\",
+                \"color\": 5763719,
+                \"footer\": { \"text\": \"UgCore Framework\" }
+              }]
+            }" \
+            "$WEBHOOK"
