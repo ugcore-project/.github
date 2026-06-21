@@ -2,7 +2,7 @@ blank_issues_enabled: false
 
 contact_links:
   - name: 💬 Support & Questions
-    url: https://discord.gg/YOUR_INVITE
+    url: https://discord.gg/pCJUcyVw5X
     about: For general support, questions, and help setting up UgCore — please use Discord, not GitHub issues.
   - name: 🔒 Security Vulnerability
     url: https://github.com/ugcore-framework/ug-core/security/advisories/new
