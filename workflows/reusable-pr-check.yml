@@ -1,0 +1,43 @@
+name: Reusable — PR Title Check
+
+on:
+  workflow_call:
+
+jobs:
+  pr-title:
+    name: Validate PR Title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title follows Conventional Commits
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # Allowed types — extend as needed
+          types: |
+            feat
+            fix
+            hotfix
+            chore
+            docs
+            refactor
+            perf
+            test
+            ci
+          # Allowed scopes (optional but recommended for a framework)
+          scopes: |
+            core
+            player
+            jobs
+            gangs
+            permissions
+            database
+            exports
+            config
+            ci
+            deps
+          requireScope: false
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: |
+            The subject "{subject}" must start with a lowercase letter.
+            Example: "feat(player): add shared object caching"
