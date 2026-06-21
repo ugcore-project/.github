@@ -1,0 +1,24 @@
+# .github/labeler.yml
+# Place this file in each repo that uses reusable-label.yml
+# Labels are applied automatically based on the PR's head branch name.
+
+feature:
+  - head-branch: ['^feature/', '^feat/']
+
+bug:
+  - head-branch: ['^fix/', '^bugfix/']
+
+hotfix:
+  - head-branch: ['^hotfix/']
+
+documentation:
+  - head-branch: ['^docs/']
+
+refactor:
+  - head-branch: ['^refactor/']
+
+chore:
+  - head-branch: ['^chore/']
+
+ci:
+  - head-branch: ['^ci/']
