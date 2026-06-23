@@ -8,7 +8,7 @@ This security policy applies to all repositories under the **UgCore Framework** 
 
 | Repository | Supported Version | Status |
 |---|---|---|
-| ug-core | Latest (`main`) | ✅ Actively maintained |
+| ug-core | Latest (`main`/`dev`) | ✅ Actively maintained |
 | ug-core | Previous minor | ⚠️ Critical fixes only |
 | ug-core | Older releases | ❌ Not supported |
 
